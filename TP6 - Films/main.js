@@ -1,3 +1,4 @@
+// TP6 - Films (non finalisé)
 const url = 'https://www.omdbapi.com/';
 document.getElementById('btnSearch').onclick = async () => {
     const clef = 'efdc2275';
@@ -15,14 +16,41 @@ document.getElementById('btnSearch').onclick = async () => {
 
     // Parcourez les résultats et ajoutez-les au tableau
     data.Search.forEach(item => {
-        const newRow = template.content.cloneNode(true);
+        const newRow1 = template.content.cloneNode(true);
 
         // Remplissez les données dans la nouvelle ligne
-        newRow.querySelector('td:nth-child(1)').textContent = item.Title; // Titre
-        newRow.querySelector('td:nth-child(2)').textContent = item.Year; // Année
-        newRow.querySelector('img').setAttribute('src', item.Poster); // Image
+        newRow1.querySelector('td:nth-child(1)').textContent = item.Title; // Titre
+        newRow1.querySelector('td:nth-child(2)').textContent = item.Year; // Année
+        newRow1.querySelector('img').setAttribute('src', item.Poster); // Image
+
+        const btnPlus = newRow1.querySelector('#btnPlus');
+            btnPlus.onclick = () => {
+                addToWatchList(item);
+            };
 
         // Ajoutez la nouvelle ligne au tableau
-        tbody.appendChild(newRow);
+        tbody.appendChild(newRow1);
+
     });
+}
+
+function addToWatchList(item) {
+    const tbody2 = document.getElementById('myTbody2');
+    const template2 = document.getElementById('templateTr2');
+    const newRow2 = template2.content.cloneNode(true);
+
+    // Remplissez les données dans la nouvelle ligne
+    newRow2.querySelector('td:nth-child(1)').textContent = item.Title; // Titre
+    newRow2.querySelector('td:nth-child(2)').textContent = item.Year; // Année
+    newRow2.querySelector('td:nth-child(3)').textContent = "N/A"; // Note (vous pouvez mettre une note ici si vous le souhaitez)
+    newRow2.querySelector('img').setAttribute('src', item.Poster); // Image
+
+    // Ajoutez un événement au bouton de suppression
+    const btnDelete = newRow2.querySelector('.btn-outline-danger');
+    btnDelete.onclick = () => {
+        tbody2.removeChild(newRow2);
+    };
+
+    // Ajoutez la nouvelle ligne au tableau de la liste
+    tbody2.appendChild(newRow2);
 }
