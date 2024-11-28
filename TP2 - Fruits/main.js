@@ -1,4 +1,4 @@
-// TP - Fruits
+// TP2 - Fruits
 document.getElementById('btnAjouter').addEventListener('click', function() {
     const fruitInput = document.getElementById('fruit');
     const fruitName = fruitInput.value.trim();

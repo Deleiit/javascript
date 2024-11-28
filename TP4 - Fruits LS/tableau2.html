@@ -1,0 +1,19 @@
+<script>
+    class Personne {
+        constructor(prenom='',nom=''){
+            this.nom = nom;
+            this.prenom = prenom;
+        }
+    }
+    // on the fly
+    const p1 = {prenom:'BRAD',nom:'PITT',status:true}
+    const p2 = new Personne('Tom','CRUISE');
+
+    const personnes=[];
+    personnes.push(p1);
+    personnes.push(p2);
+
+    for (let p of personnes) {
+        console.log('${p.prenom} ${p.nom}');
+    }
+</script>

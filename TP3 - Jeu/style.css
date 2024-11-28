@@ -1,0 +1,74 @@
+/* Styles pour le corps et le conteneur */
+body {
+    margin: 0;
+    background-image: url("bg.webp");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.green{ border-color: rgb(92, 220, 0)!important; opacity: 0.60; }
+
+.container {
+    padding: 1px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 336px; /* Largeur totale de la zone de jeu */
+    height: 720px; /* Hauteur totale de la zone de jeu */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne */
+}
+
+.container div {
+    cursor: pointer;
+    width: 80px;
+    height: 116px;
+    border: 1px solid rgba(10, 10, 10, 0);
+    background-color: #ccc; /* Couleur de fond par défaut */
+    background-size: cover; /* Ajuster la taille de l'image */
+    transition: opacity 0.3s; /* Transition pour l'effet d'opacité */
+}
+
+.container div:hover {
+    opacity: 0.60; /* Opacité au survol */
+}
+
+.card.flipped {
+    opacity: 1; /* Visibilité complète quand la carte est retournée */
+}
+
+.card.matched {
+    opacity: 0; /* Rendre les cartes appariées invisibles */
+    pointer-events: none; /* Désactiver les clics sur les cartes appariées */
+}
+
+/* Styles pour le message et le timer */
+#message {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #fff; /* Couleur du texte du message */
+}
+
+/* Styles pour le timer */
+#timer {
+    font-size: 18px;
+    color: #fff; /* Couleur du texte du timer */
+}
+
+/* Styles pour le bouton */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(92, 220, 0); /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur sur le bouton */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+button:hover {
+    background-color: rgb(70, 200, 0); /* Couleur de fond au survol */
+}

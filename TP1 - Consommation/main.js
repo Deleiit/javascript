@@ -1,4 +1,4 @@
-// TP - Consommation
+// TP1 - Consommation
 function conso() {
     const essence =document.getElementById('essence').value;
     const km =document.getElementById('km').value;
