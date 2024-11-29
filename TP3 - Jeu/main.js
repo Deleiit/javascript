@@ -1,7 +1,7 @@
 // TP3 - Jeu
 let tab1 = Array.from(Array(12).keys());
 let tab2 = [...tab1, ...tab1];
-tab2.sort(() => Math.random() - 0.5); // Mélanger le tableau
+tab2.sort(() => Math.random() - 0.5);
 
 let premier = null;
 let second = null;
@@ -20,7 +20,7 @@ function creerCartes() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.number = num;
-        card.style.backgroundImage = `url('img/${num}.webp')`; // Afficher l'image dès le départ
+        card.style.backgroundImage = `url('img/${num}.webp')`;
         card.addEventListener('click', retournerCartes);
         container.appendChild(card);
     });
@@ -30,7 +30,7 @@ function retournerCartes() {
     if (board || this === premier) return;
 
     this.classList.add('retournee');
-    this.classList.add('green'); // Ajouter la classe .green à la carte cliquée
+    this.classList.add('green');
 
     if (!premier) {
         premier = this;
@@ -50,7 +50,6 @@ function check() {
 }
 
 function enleverCartes() {
-    // Rendre les cartes appariées invisibles
     premier.classList.add('matched');
     second.classList.add('matched');
     paires += 1;
@@ -66,9 +65,9 @@ function enleverCartes() {
 function trouverCartes() {
     setTimeout(() => {
         premier.classList.remove('retournee');
-        premier.classList.remove('green'); // Retirer la classe .green
+        premier.classList.remove('green');
         second.classList.remove('retournee');
-        second.classList.remove('green'); // Retirer la classe .green
+        second.classList.remove('green');
         reset();
     }, 1000);
 }

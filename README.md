@@ -4,7 +4,7 @@
 
 - **Accédez aux travaux pratiques réalisés :** https://deleiit.github.io/javascript/
 
-# License
+# Licence
 
 Ce code est la propriété exclusive de Vassili LE MAY.  
 Tous les droits sont réservés.
