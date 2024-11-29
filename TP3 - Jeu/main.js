@@ -46,7 +46,7 @@ function retournerCartes() {
 function check() {
     const match = premier.dataset.number === second.dataset.number;
 
-    match ? enleverCartes() : unretournerCartess();
+    match ? enleverCartes() : trouverCartes();
 }
 
 function enleverCartes() {
@@ -63,7 +63,7 @@ function enleverCartes() {
     reset();
 }
 
-function unretournerCartess() {
+function trouverCartes() {
     setTimeout(() => {
         premier.classList.remove('retournee');
         premier.classList.remove('green'); // Retirer la classe .green
